@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover:  0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    
+    /* Laranja escuro */
+    --primary: 30 100% 43%; /* Cor principal - laranja escuro */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 30 100% 70%; /* Cor secundária - laranja mais suave */
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 30 30% 55%; /* Cor suave de fundo para elementos desativados */
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 30 100% 60%; /* Cor de destaque */
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 30 100% 40%; /* Cor de borda em tom laranja */
+    --input: 30 50% 80%;
+    --ring: 30 100% 60%; /* Cor do anel de foco */
+    --radius: 10.6%;
+
+    /* Layout variables */
+    --header-height: 8rem;
+    --app-height: calc(100vh - var(--header-height));
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 400 40% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Laranja escuro para dark mode */
+    --primary: 30 100% 35%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 30 100% 60%;
+    --secondary-foreground: 220 20% 98%;
+    --muted: 30 50% 50%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 30 100% 55%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 30 100% 40%;
+    --input: 290 50% 16.9%;
+    --ring: 1000 100% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #5a272762;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #534d4d;
+}
