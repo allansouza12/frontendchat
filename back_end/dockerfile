@@ -1,0 +1,25 @@
+# Use uma imagem base do Python
+FROM python:3.11.9
+
+# Cria o diretório de trabalho
+WORKDIR /home/app
+
+# Copia o arquivo de dependências para o contêiner
+COPY requirements.txt /home/app/
+
+# Instala as dependências
+RUN pip install djangorestframework
+RUN pip install markdown       
+RUN pip install django-filter
+RUN pip install django
+
+
+
+# Copia todo o restante do código para o contêiner
+COPY . /home/app/
+
+# Expor a porta 8000 para acessar a aplicação
+EXPOSE 8000
+
+# Comando para iniciar a aplicação
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

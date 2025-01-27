@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "11eb4d49-14e6-4b0e-9266-c138d9612b25",
+		"name": "chatallan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41535011"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "allan",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "teste@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/accounts/signup",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"accounts",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user logged",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NDI5ODM5LCJpYXQiOjE3Mzc4MjUwMzksImp0aSI6IjdiMjNmNzhlNjc0YzRmZTlhNDhjMGE0NWVhMTZkZDU4IiwidXNlcl9pZCI6Mn0.LyIYeUshbEmS9m9giQi-FLeY2hE0DVimBjZKjakEhsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/accounts/me",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"accounts",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "teste@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/accounts/signin",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"accounts",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upadate user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NDI5ODM5LCJpYXQiOjE3Mzc4MjUwMzksImp0aSI6IjdiMjNmNzhlNjc0YzRmZTlhNDhjMGE0NWVhMTZkZDU4IiwidXNlcl9pZCI6Mn0.LyIYeUshbEmS9m9giQi-FLeY2hE0DVimBjZKjakEhsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Novo nome",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "teste@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/accounts/me",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"accounts",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NDI5ODM5LCJpYXQiOjE3Mzc4MjUwMzksImp0aSI6IjdiMjNmNzhlNjc0YzRmZTlhNDhjMGE0NWVhMTZkZDU4IiwidXNlcl9pZCI6Mn0.LyIYeUshbEmS9m9giQi-FLeY2hE0DVimBjZKjakEhsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email\n",
+							"value": "allan@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/chats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"chats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get chats",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NDI5ODM5LCJpYXQiOjE3Mzc4MjUwMzksImp0aSI6IjdiMjNmNzhlNjc0YzRmZTlhNDhjMGE0NWVhMTZkZDU4IiwidXNlcl9pZCI6Mn0.LyIYeUshbEmS9m9giQi-FLeY2hE0DVimBjZKjakEhsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/chats/",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"chats",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NDI5ODM5LCJpYXQiOjE3Mzc4MjUwMzksImp0aSI6IjdiMjNmNzhlNjc0YzRmZTlhNDhjMGE0NWVhMTZkZDU4IiwidXNlcl9pZCI6Mn0.LyIYeUshbEmS9m9giQi-FLeY2hE0DVimBjZKjakEhsE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/chats/5",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"chats",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "body",
+							"value": "ola mundo",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/allan/Pictures/foto craca.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/chats/6/messages",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"chats",
+						"6",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get chat messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/chats/6/messages",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"chats",
+						"6",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM4NDI5ODM5LCJpYXQiOjE3Mzc4MjUwMzksImp0aSI6IjdiMjNmNzhlNjc0YzRmZTlhNDhjMGE0NWVhMTZkZDU4IiwidXNlcl9pZCI6Mn0.LyIYeUshbEmS9m9giQi-FLeY2hE0DVimBjZKjakEhsE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000/api/v1",
+			"type": "string"
+		}
+	]
+}

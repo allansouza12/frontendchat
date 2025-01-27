@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .  # Diretório onde o Dockerfile está localizado
+      dockerfile: Dockerfile  # Nome do arquivo Dockerfile (caso não seja o padrão)
+    image: backend-chat-python:latest  # Isso garantirá que o nome da imagem seja atualizado após a construção
+    ports:
+      - '8000:8000'  # Porta onde a aplicação será exposta (ajuste conforme necessário)
+    volumes:
+      - .:/home/app:cached  # Monta o diretório atual no contêiner
+      - /home/app/.env  # Monta o arquivo de variáveis de ambiente, caso necessário
+    working_dir: /home/app  # Garante que o diretório de trabalho seja /home/app
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]  # Inicia a aplicação automaticamente
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 128M
+    environment:
+      - PYTHONUNBUFFERED=1  # Para evitar buffering de logs
