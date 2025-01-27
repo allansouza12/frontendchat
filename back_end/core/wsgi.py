@@ -14,3 +14,4 @@ application = StaticFilesHandler(get_wsgi_application())
 application = socketio.WSGIApp(socket, application)
 
 eventlet.wsgi.server(eventlet.listen(('127.0.0.1', 8000)), application)
+
